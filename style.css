@@ -1,0 +1,962 @@
+.nav-container {
+  font-family: "Cubano", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0 150px;
+  /* Reduce padding for the links */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0%;
+  left: 2px;
+  /* Adjust the left position */
+  right: 2px;
+  /* Adjust the right position */
+  z-index: 1000;
+  background-color: black;
+  height: fit-content;
+  margin-bottom: auto;
+  backdrop-filter: blur(5px);
+  /* Apply blur effect */
+  opacity: 0.8;
+  /* Set initial opacity */
+  transition: backdrop-filter 0.3s, opacity 0.3s;
+}
+
+.glow-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  /* Adjust the height of the glowing bar */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 0.3s;
+  /* Add transition for smooth effect */
+  pointer-events: none;
+  /* Prevent the glow-bar from affecting interactions */
+}
+
+.nav-scrolled {
+  backdrop-filter: blur(5px);
+  /* Apply blur effect */
+  opacity: 0.8;
+  /* Set opacity for scrolled state */
+}
+
+.my-light-mode .nav-container {
+  background-color: white;
+  /* Background color for light mode */
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: #888888;
+}
+
+.nav-container a:hover {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin-right: 20px;
+  /* Adjust the margin as needed */
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin-left: 20px;
+  /* Adjust the margin as needed */
+}
+
+.mode-toggle-button,
+.connect-button {
+  border: none;
+  border-radius: 0.375rem;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Center the content horizontally */
+  font-family: "Cubano", sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.mode-toggle-button {
+  height: 40px;
+  width: 30px;
+}
+
+
+.connect-button {
+  text-justify: center;
+  margin-right: 5px;
+  height: 40px;
+  width: 100px;
+
+  /* Add margin to create space between buttons */
+}
+
+.mode-toggle-button img,
+.connect-button img {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  padding-right: 5px;
+}
+
+
+.intro-container {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 70px 200px;
+  /* Add padding around the container */
+}
+
+
+.intro-content {
+  margin-bottom: 2px;
+  /* Add margin between content and button */
+}
+
+.learn-more {
+  text-decoration: none;
+  border-bottom: 2px dashed grey;
+  color: inherit;
+}
+
+.my-light-mode .learn-more{
+  border-bottom: 2px dashed black;
+}
+
+.learn-more:hover {
+  border-bottom-color: black; /* Change color on hover if needed */
+}
+
+.my-light-mode .learn-more:hover {
+  border-bottom-color: white; /* Change color on hover if needed */
+}
+
+.Professional {
+  position: relative;
+  display: inline-block;
+}
+
+.Professional::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  /* Increase the height to make the space larger */
+  background: url('Images/curved-underline.svg') no-repeat center bottom;
+  background-size: contain;
+  position: absolute;
+  bottom: -10px;
+  /* Adjust the bottom value for spacing */
+  left: -30%;
+  /* Adjust the left value to move the SVG to the left */
+}
+
+.lines {
+  position: absolute;
+  top: -20px;
+  /* Adjust this value to control the distance above the text */
+  left: 105%;
+  transform: translateX(-50%);
+}
+
+
+/* Add styles for the button */
+.Download-CV-button {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 0.375rem;
+  background: green;
+  color: #000000;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: "Cubano", sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  padding: 20px 25px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  vertical-align: middle;
+}
+
+#CV{
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.Download-CV-button:hover {
+  background-color: #4bff4b;
+}
+
+@keyframes pulseFade {
+
+  0%,
+  100% {
+    opacity: 0;
+    /* Fully transparent */
+  }
+
+  50% {
+    opacity: 1;
+    /* Fully visible */
+  }
+}
+
+.chevrons-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#chevrons {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  transform: rotate(270deg);
+  /* Pointing downward */
+  animation: pulseFade 2s infinite;
+  /* Apply the pulseFade animation */
+}
+
+.about-me-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 10px;
+}
+
+.about-section {
+  width: 100%;
+  max-width: 1000px;
+  /* Adjust the maximum width as needed */
+  padding: 0 110px;
+  /* Add padding on the left and right sides */
+  box-sizing: border-box;
+  /* Ensure padding is included in width */
+  display: flex;
+  /* Added */
+  justify-content: space-between;
+  /* Added */
+  align-items: flex-start;
+  /* Vertically aligns items at the top */
+}
+
+
+.about-content {
+  display: flex;
+  align-items: center;
+}
+
+.about-image img {
+  width: 150px;
+  height: 150px;
+  vertical-align: middle;
+  /* Adjust vertical alignment */
+  border-radius: 50%;
+  margin-right: 20px;
+  border-color: #000000;
+  margin-top: 35%;
+}
+
+
+.fun-underline {
+  width: 100px;
+  /* Adjust the width as needed */
+  height: 100px;
+  /* Adjust the height as needed */
+  background: url('Images/fununderline.svg') no-repeat center;
+  position: relative;
+  top: -30px;
+  /* Adjust the vertical positioning */
+  left: 40%;
+  transform: translateX(-50%);
+}
+
+.about-me-vertical-line {
+  width: 1px;
+  height: 400px;
+  background-color: white;
+  margin: 30px 20px 0;
+  /* Adjust the margin-top value to start the line lower */
+}
+
+.my-light-mode .about-me-vertical-line {
+  background-color: black;
+}
+
+.my-light-mode .vertical-line {
+  background-color: black;
+}
+
+.about-text {
+  padding-top: 10px;
+}
+
+.about-paragraph {
+  text-align: justify;
+  hyphens: auto;
+}
+
+
+.nust-link {
+  text-decoration: none;
+  border-bottom: 2px dashed grey;
+  color: inherit;
+}
+
+.my-light-mode .nust-link{
+  border-bottom: 2px dashed black;
+}
+
+.nust-link:hover {
+  border-bottom-color: black; /* Change color on hover if needed */
+}
+
+.my-light-mode .nust-link:hover {
+  border-bottom-color: white; /* Change color on hover if needed */
+}
+
+.my-light-mode .project-1 {
+  background-color: white;
+  /* Background color for light mode */
+}
+
+.my-light-mode .project-2 {
+  background-color: white;
+  /* Background color for light mode */
+}
+
+.my-light-mode .project-3 {
+  background-color: white;
+  /* Background color for light mode */
+}
+
+.my-light-mode .project-4 {
+  background-color: white;
+  /* Background color for light mode */
+}
+
+.my-light-mode .project-5 {
+  background-color: white;
+  /* Background color for light mode */
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  /* Ensure the "Projects" heading and projects are in a column layout */
+  /* Center the content horizontally */
+  padding: 50px 300px 0;
+  /* Adjust the padding to reduce the space on both sides */
+}
+
+.projects-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Two columns */
+  grid-gap: 10px;
+  /* Gap between items */
+  padding: 5px 300px;
+  /* Add padding on both sides */
+}
+
+.project-1,
+.project-2,
+.project-4,
+.project-5 {
+  grid-column: span 1;
+  /* Span both columns */
+  padding: 10px;
+  /* Add padding */
+  background-color: rgb(58, 58, 58);
+  /* Set background color */
+  border-radius: 10px;
+  /* Add rounded edges */
+}
+
+.project-3 {
+  grid-column: span 2;
+  /* Span both columns */
+  padding: 10px;
+  /* Add padding */
+  background-color: rgb(58, 58, 58);
+  /* Set background color */
+  border-radius: 10px;
+  /* Add rounded edges */
+}
+
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .projects-section {
+    grid-template-columns: 1fr;
+    /* Single column */
+    grid-gap: 10px;
+    /* Gap between items */
+    padding: 50px 20px;
+    /* Adjust padding on both sides */
+  }
+
+  .project-1,
+  .project-2,
+  .project-3,
+  .project-4,
+  .project-5 {
+    grid-column: span 1;
+    /* Span one column */
+    padding: 10px;
+    /* Add padding */
+    background-color: rgb(58, 58, 58);
+    /* Set background color */
+    border-radius: 10px;
+    /* Add rounded edges */
+  }
+}
+
+.project-description {
+  text-align: justify;
+}
+
+.project-link {
+  text-decoration: none;
+  border-bottom: 2px dashed grey;
+  color: inherit;
+}
+
+.my-light-mode .project-link{
+  border-bottom: 2px dashed black;
+}
+
+.project-link:hover {
+  border-bottom-color: black; /* Change color on hover if needed */
+}
+
+.my-light-mode .project-link:hover {
+  border-bottom-color: white; /* Change color on hover if needed */
+}
+
+.project-tech {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.25rem;
+  /* Adjust the gap between images */
+  align-items: center;
+  vertical-align: middle;
+}
+
+.tech-list li {
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.WORK-EXPERIENCE {
+  padding-bottom: 5px;
+}
+
+.Work-Experience-section {
+  padding: 10px 300px 0px;
+}
+
+.work-subsection {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.work-period {
+  font-weight: bold;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+.vertical-line {
+  width: 0.5px;
+  height: 220px;
+  background-color: black;
+  margin: 0px 20px 0;
+  left: 50%;
+  /* Position the line at the center */
+  transform: translateX(-50%);
+  /* Adjust to center the line */
+}
+
+.my-dark-mode,
+.vertical-line {
+  background-color: white;
+}
+
+.work-details {
+  flex: 1;
+}
+
+.company-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.company-name-link {
+  text-decoration: none;
+  border-bottom: 2px dashed grey;
+  color: inherit;
+}
+
+.my-light-mode .company-name-link{
+  border-bottom: 2px dashed black;
+}
+
+.company-name-link:hover {
+  border-bottom-color: black; /* Change color on hover if needed */
+}
+
+.my-light-mode .company-name-link:hover {
+  border-bottom-color: white; /* Change color on hover if needed */
+}
+
+.position {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.role-description {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.skills {
+  font-weight: bold;
+}
+
+/* Add this CSS to style the skills list items */
+.skills ul {
+  list-style: none;
+  padding: 5px 0 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills ul li {
+  display: inline-block;
+  padding: 5px 10px 5px;
+  background-color: #696969;
+  color: white;
+  border-radius: 10px;
+}
+
+.Certificates-container {
+  display: flex;
+  flex-direction: column;
+  /* Ensure the "Projects" heading and projects are in a column layout */
+  /* Center the content horizontally */
+  padding: 0px 300px 15px;
+  /* Adjust the padding to reduce the space on both sides */
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: small;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+/* Add padding to the top of the content to prevent overlap */
+.container {
+  max-width: 800px;
+  margin: 60px auto 0;
+  /* Add top margin to create space below the navigation bar */
+  padding: 20px;
+  text-align: justify;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+body {
+  overflow-x: hidden;
+  content: "";
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.my-light-mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.my-dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/*Theme Button Light Theme */
+.my-light-mode .mode-toggle-button {
+  background-color: white;
+  border: 1px solid #333333;
+  /* Adjust border color for better contrast */
+  color: #000000;
+}
+
+.my-light-mode .mode-toggle-button img {
+  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(1deg) brightness(1040%);
+}
+
+/* Dark Theme */
+.my-dark-mode .mode-toggle-button {
+  background-color: #333333;
+  border: 1px solid #888888;
+  color: #888888;
+}
+
+/* Connect Button Light Theme */
+.my-light-mode .connect-button {
+  background-color: black;
+  color: white;
+  border: 1px solid #333333;
+  /* Adjust border color for better contrast */
+}
+
+
+.my-light-mode #LinkedIn {
+  filter: brightness(0) invert(1);
+}
+
+/* Connect Button Dark Theme */
+.my-dark-mode .connect-button {
+  background-color: white;
+  color: black;
+}
+
+.my-dark-mode .mode-toggle-button img {
+  filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(180deg) brightness(150%);
+}
+
+.font-sans {
+  font-family: "Sofia Pro", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.font-bold {
+  font-family: "Cubano", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+}
+
+.text-gray2 {
+  color: #888888;
+}
+
+.hover\:text-white:hover {
+  color: #ffffff;
+}
+
+.leading-none {
+  line-height: 1;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.dark .text-white {
+  color: #ffffff;
+}
+
+.relative {
+  position: relative;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-2xl {
+  font-size: 2rem;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.h-1 {
+  height: 0.25rem;
+  font-size: medium;
+}
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+
+
+.from-gray5 {
+  background-color: #888888;
+}
+
+.to-gray4 {
+  background-color: #444444;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.space-x-6>*+* {
+  margin-left: 1.5rem;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+
+.explore {
+  color: rgb(0, 165, 0);
+
+  font-weight: 900;
+  animation: pulse 1s infinite;
+  font-family: "Cubano", sans-serif;
+  position: relative;
+  /* Add relative positioning to the parent element */
+}
+
+.explore:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -500%;
+  /* Adjust the distance above the text */
+  left: 65%;
+  transform: translateX(-50%);
+  width: 100px;
+  /* Adjust the width of the GIF container */
+  height: 100px;
+  /* Adjust the height of the GIF container */
+  background-image: url("https://i.imgur.com/41Wpby2.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.SKILLS-TOOLS-container {
+  display: flex;
+  padding: 50px 300px 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 equal size columns */
+  gap: 5px;
+  /* Gap between skill slots */
+  padding: 0 300px 50px;
+}
+
+.skill-slot {
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(58, 58, 58);
+}
+
+.skill-slot img {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0 auto 10px;
+  padding-top: 20px;
+}
+
+.my-dark-mode .skill-slot img {
+  filter: brightness(0) invert(1);
+}
+
+.my-light-mode .skill-slot img {
+  filter: none;
+}
+
+
+.my-light-mode .skill-name {
+  color: white;
+}
+
+.skill-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+.open-for-work-text {
+  font-size: 16px;
+  font-weight: bolder;
+  color: #22d3ee;
+  display: inline-block;
+  position: relative;
+  animation: bounce 1s infinite;
+  padding-left: 10px;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* CSS for header and footer */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.contact-icon {
+  margin: 0 5px;
+}
+
+.contact__icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.contact__icon--github {
+  background-image: url("github-icon.png");
+}
+
+.contact__icon--linkedin {
+  background-image: url("linkedin-icon.png");
+}
+
+.contact__icon--call {
+  background-image: url("call-icon.png");
+}
+
+.contact__icon--whatsapp {
+  background-image: url("whatsapp-icon.png");
+}
+
+.contact__icon--email {
+  background-image: url("email-icon.png");
+}
