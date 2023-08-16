@@ -20,7 +20,18 @@ var mySwiper = new Swiper('.swiper-container', {
   autoplay: {
     delay: 2000,
   },
+
+  breakpoints: {
+    640: {
+      slidesPerView: 1, // Show 1 slide on screens smaller than 640px
+    },
+    768: {
+      slidesPerView: 2, // Show 2 slides on screens smaller than 768px
+    },
+    1024: {
+      slidesPerView: 3, // Show 3 slides on screens smaller than 1024px
+    }
+  },
   loop: true,
-  slidesPerView: '3', // Set to 'auto' to display as many images as fit in the view
   spaceBetween: 20, // Adjust the value to create a gap between images
 });

@@ -7,14 +7,13 @@
   /* Reduce padding for the links */
   display: flex;
   justify-content: space-between;
-  position: fixed;
   top: 0%;
   left: 2px;
   /* Adjust the left position */
   right: 2px;
   /* Adjust the right position */
   z-index: 1000;
-  background-color: black;
+  position: fixed;
   height: fit-content;
   margin-bottom: auto;
   backdrop-filter: blur(5px);
@@ -119,20 +118,15 @@
 
 
 .intro-container {
-  margin-top: 55px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 70px 200px;
-  /* Add padding around the container */
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
-
-
-.intro-content {
-  margin-bottom: 2px;
-  /* Add margin between content and button */
+.intro-details{
+  padding: 3rem;
 }
 
 .learn-more {
@@ -231,6 +225,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+  padding: 1rem;
 }
 
 #chevrons {
@@ -246,7 +241,8 @@
 .about-me-container {
   display: flex;
   justify-content: center;
-  padding: 50px 0 10px;
+  align-items: center;
+  padding: 1rem;
 }
 
 .about-section {
@@ -264,11 +260,24 @@
   align-items: flex-start;
   /* Vertically aligns items at the top */
 }
-
+@media screen and (max-width: 850px) {
+  .about-section {
+    flex-direction: column;
+  }
+}
 
 .about-content {
   display: flex;
   align-items: center;
+  margin: 1rem;
+}
+@media screen and (max-width: 850px) {
+  .about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
 
 .about-image img {
@@ -283,6 +292,7 @@
 }
 
 
+
 .fun-underline {
   width: 100px;
   /* Adjust the width as needed */
@@ -294,14 +304,6 @@
   /* Adjust the vertical positioning */
   left: 40%;
   transform: translateX(-50%);
-}
-
-.about-me-vertical-line {
-  width: 1px;
-  height: 400px;
-  background-color: white;
-  margin: 30px 20px 0;
-  /* Adjust the margin-top value to start the line lower */
 }
 
 .my-light-mode .about-me-vertical-line {
@@ -367,47 +369,60 @@
 
 .projects-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* Ensure the "Projects" heading and projects are in a column layout */
   /* Center the content horizontally */
-  padding: 50px 300px 0;
   /* Adjust the padding to reduce the space on both sides */
 }
 
 .projects-section {
+  margin: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   /* Two columns */
   grid-gap: 10px;
   /* Gap between items */
-  padding: 5px 300px;
+  padding: 2rem;
   /* Add padding on both sides */
 }
-
-.project-1,
-.project-2,
-.project-4,
-.project-5 {
-  grid-column: span 1;
-  /* Span both columns */
-  padding: 10px;
-  /* Add padding */
-  background-color: rgb(58, 58, 58);
-  /* Set background color */
+.project-1{
+  grid-column-start: 1;
+  grid-column-end: 2;
   border-radius: 10px;
-  /* Add rounded edges */
+  padding: 10px;
+  background-color: rgb(58, 58, 58);
 }
-
+.project-2{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(58, 58, 58);
+}
 .project-3 {
-  grid-column: span 2;
-  /* Span both columns */
-  padding: 10px;
-  /* Add padding */
-  background-color: rgb(58, 58, 58);
-  /* Set background color */
-  border-radius: 10px;
-  /* Add rounded edges */
+grid-column-start: 1;
+grid-column-end: 3;
+border-radius: 10px;
+padding: 10px;
+background-color: rgb(58, 58, 58);
 }
+.project-4{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(58, 58, 58);
+}
+.project-5{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(58, 58, 58);
+}
+
+
 
 
 /* Media query for small screens */
@@ -485,32 +500,34 @@
 
 .WORK-EXPERIENCE {
   padding-bottom: 5px;
+  padding: 1rem;
 }
 
 .Work-Experience-section {
-  padding: 10px 300px 0px;
+  width: 100%;
 }
 
 .work-subsection {
   display: flex;
-  margin-bottom: 50px;
+  justify-self: center;
+  align-items: center;
+  padding: 1rem;
+}
+@media screen and (max-width: 850px) {
+  .work-subsection {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+  }
 }
 
 .work-period {
   font-weight: bold;
   margin-right: 20px;
   vertical-align: top;
-}
-
-.vertical-line {
-  width: 0.5px;
-  height: 220px;
-  background-color: black;
-  margin: 0px 20px 0;
-  left: 50%;
-  /* Position the line at the center */
-  transform: translateX(-50%);
-  /* Adjust to center the line */
+  margin: 2rem;
 }
 
 .my-dark-mode,
@@ -579,13 +596,10 @@
 
 .Certificates-container {
   display: flex;
-  flex-direction: column;
-  /* Ensure the "Projects" heading and projects are in a column layout */
-  /* Center the content horizontally */
-  padding: 0px 300px 15px;
-  /* Adjust the padding to reduce the space on both sides */
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
 }
-
 
 footer {
   background-color: #333;
@@ -698,7 +712,7 @@ body {
   color: #888888;
 }
 
-.hover\:text-white:hover {
+.hover:text-white:hover {
   color: #ffffff;
 }
 
@@ -853,16 +867,16 @@ body {
 
 .SKILLS-TOOLS-container {
   display: flex;
-  padding: 50px 300px 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* 4 equal size columns */
-  gap: 5px;
-  /* Gap between skill slots */
-  padding: 0 300px 50px;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 .skill-slot {
