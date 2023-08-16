@@ -2,20 +2,7 @@
 .swiper-container {
     width: 100%;
     height: auto;
-    padding-bottom: 0px;
-  }
-  
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: rgb(58, 58, 58);
-    border-radius: 10px;
-    padding: 0 5px 0;
-    cursor:grab;
+    padding: 1rem;
   }
   
   .CERTIFICATE-NAME{
